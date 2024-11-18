@@ -1,8 +1,8 @@
 import json
 def read_file():
     with open ("databases/exerciseOneList.json","r") as file :
-        data =file.read()
-        convertirList= json .loads(data)
+        datos =file.read()
+        convertirList= json .loads(datos)
         return convertirList
 
 def write_file(datos):
