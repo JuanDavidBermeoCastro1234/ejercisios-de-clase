@@ -5,15 +5,15 @@ def read_file():
         convertirList= json .loads(data)
         return convertirList
 
-def write_file(data):
+def write_file(datos):
     with open ("databases/exerciseOneList.json","wb+") as file :
-        ConvertirJson= json.dump(data, indent=4).encode("utf-8")
+        ConvertirJson= json.dump(datos, indent=4).encode("utf-8")
         file.write(ConvertirJson)
         file.close()
 
 
-    def save_course(course):
-        data= read_file()
+def saveCourse(course):
+        data=read_file()
         data.append(course)
         write_file(data)
         return data

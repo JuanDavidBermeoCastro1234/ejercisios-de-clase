@@ -1,6 +1,5 @@
-from logica.exerciseOne import save_course
-
+from logica.exerciseOne import saveCourse
 def design ():
     course =input("what is the course name? ")
-    result= save_course(course)
+    result= saveCourse(course)
     print(result)
