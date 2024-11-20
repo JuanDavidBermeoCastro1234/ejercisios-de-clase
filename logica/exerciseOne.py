@@ -6,7 +6,7 @@ def read_file():
         return convertirList
 
 def write_file(datos):
-    with open ("databases/exerciseOneList.json","wb+") as file :
+    with open ("databases/exerciseOneList.json","w+") as file :
         ConvertirJson= json.dump(datos, indent=4).encode("utf-8")
         file.write(ConvertirJson)
         file.close()
