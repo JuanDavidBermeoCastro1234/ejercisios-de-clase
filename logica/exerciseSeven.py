@@ -8,7 +8,7 @@ def read_file():
         return convertirdict
 
 def write_file (data):
-    with open ("databases/exerciseSevendict.json", "wb+") as file :
+    with open ("databases/exerciseSevendict.json", "w+") as file :
         convertirjson= json.dump(data, indent=4).encode ("utf-8")
         file.write(convertirjson)
         file.close()
