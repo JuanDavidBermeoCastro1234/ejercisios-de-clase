@@ -1,7 +1,7 @@
-[
-    "matematicas",
-    "fisica",
-    "quimica",
-    "historia"
-]
+{
+    "matematicas": "01",
+    "fisica" : 02,
+    "quimica" :"goju",
+    "historia" "papucho"
+}
 
