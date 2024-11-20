@@ -1,4 +1,3 @@
-while True:
-
-    from menu.exerciseOne import design
+from menu.exerciseOne import designOnelist
  
+designOnelist()
