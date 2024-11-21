@@ -7,7 +7,7 @@
 
 from tabulate import tabulate
 
-from logic.exercisesThree import save_course
+from logic.exercisesthree import save_course
 
 def designThreeList():
     course = input("whats the name of the Subject? :  ")
