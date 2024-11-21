@@ -6,7 +6,6 @@
 
 
 from tabulate import tabulate
-
 from logic.exercisesthree import save_course
 
 def designThreeList():
@@ -15,7 +14,7 @@ def designThreeList():
     result = save_course(course, note)
     print(result)
 
-    table_notes = list(zip(result["subject"], result["finalNote"]))
+    table_notes = list(zip(result["course"], result["grade"]))
 
     headers = ["COURSE", "NOTES"]
     

@@ -2,4 +2,4 @@ from menu.exercisesOne import designOneList
 from menu.exercisesTwo import designTwoList
 from menu.exercisesthree import designThreeList 
 
-designOneList()
+designThreeList()

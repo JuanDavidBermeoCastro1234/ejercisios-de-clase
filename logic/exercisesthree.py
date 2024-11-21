@@ -15,8 +15,8 @@ def write_file(data, path):
         
 def save_course(course, note):
     data = read_file("exercisesThreelist.json")
-    data["subject"].append(course)
-    data["finalNote"].append(note)
+    data["course"].append(course)
+    data["grade"].append(note)
 
     write_file(data, "exercisesThreelist.json")
     return data
