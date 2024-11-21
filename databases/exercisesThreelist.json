@@ -2,11 +2,15 @@
     "course": [
         "juan",
         "juan",
-        "juan"
+        "juan",
+        "kla",
+        "goku"
     ],
     "grade": [
         10.0,
         10.0,
-        10.0
+        10.0,
+        10.0,
+        80.0
     ]
 }
