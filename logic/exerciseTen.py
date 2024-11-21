@@ -22,3 +22,56 @@ def save_numbers():
     data = read_file("exerciseTenlist.json")
     write_file(data, "exerciseTenlist.json")
     return data
+
+
+#dict
+def read_file(path):
+    with open(f"databases/{path}", "r") as file:
+        data = file.read()
+        return json.loads(data)
+
+def write_file(data, path):
+    with open(f"databases/{path}", "w") as file:
+        convertJson = json.dumps(data, indent=4)
+        file.write(convertJson)
+
+def add_client(database, nif, name, address, phone, email,preferent):
+    database[nif] = {
+        "name": name,
+        "address": address,
+        "phone": phone,
+        "email": email,
+        "preferent": preferent
+    }
+    write_file(database, "exerciseTenDict.json")
+    print(f"Client {name} added successfully.")
+
+def remove_client(database, nif):
+    if nif in database:
+        del database[nif]
+        write_file(database, "exerciseTenDict.json")
+        print(f"Client with NIF {nif} removed successfully.")
+    else:
+        print("Client not found.")
+    
+def show_client(database, nif):
+    if nif in database:
+        client = database[nif]
+        print(f"Client {nif}: {client['name']}")
+        print(f"Address: {client['address']}")
+        print(f"Phone: {client['phone']}")
+        print(f"Email: {client['email']}")
+        print(f"Preferent: {'Yes' if client['preferent'] else 'No'}")
+    else:
+        print("Client not found.")
+
+def list_all_clients(database):
+    print("\nAll clients:")
+    for nif, client in database.items():
+        print(f"NIF: {nif}, Name: {client['name']}")
+    
+def list_preferent_clients(database):
+    print("\nPreferent clients:")
+    for nif, client in database.items():
+        if client["preferent"]:
+            print(f"NIF: {nif}, Name: {client['name']}")

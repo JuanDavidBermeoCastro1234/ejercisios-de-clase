@@ -4,5 +4,5 @@ from menu.exercisesthree import designThreeList, designThreeDict
 from menu.exerciseFour import designFourList, designFourDict
 from menu.exerciseFive import designFiveList,designFiveDict
 from menu.exerciseSix import designSixList,designSixDict
-from menu.exerciseTen import designTenList
-designSixDict()
+from menu.exerciseTen import designTenList,designTenDict
+designTenDict()
