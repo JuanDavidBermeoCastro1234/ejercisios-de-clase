@@ -6,7 +6,7 @@
 
 
 from tabulate import tabulate
-from logic.exercisesthree import save_course
+from logic.exercisesthree import save_course, fruit_price
 
 def designThreeList():
     course = input("whats the name of the Subject? :  ")
@@ -22,5 +22,16 @@ def designThreeList():
     print(tabulate(table_notes, headers=headers, tablefmt="grid" ))
 
 
+#diccionario
+def designThreeDict():
+    fruit = input("Enter the fruit: ")
+    try: 
+        weight = float(input("Enter the weight in kilos of that fruit: "))
+    except ValueError:
+        print("Invalid weight. Please enter a number.")
+        return
+    
+    total_price = fruit_price(fruit, weight)
+    print(f"The price of {weight} kg of {fruit} is: {total_price}")
 
 

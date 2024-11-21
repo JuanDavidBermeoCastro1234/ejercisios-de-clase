@@ -21,3 +21,19 @@ def save_course(course, note):
     write_file(data, "exercisesThreelist.json")
     return data
 
+#ejercicio dict
+
+def search_fruit(fruit):
+    data = read_file("exerciseThreedict.json")
+    dataLower = {key.lower(): value for key, value in data.items()}
+    if fruit in dataLower:
+        return dataLower[fruit]
+    else:
+        return None    
+
+def fruit_price(fruit, weight):
+    price = search_fruit(fruit)
+    if price is not None:
+        return price * weight
+    else: 
+        return "Fruit not found"
