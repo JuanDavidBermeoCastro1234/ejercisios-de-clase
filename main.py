@@ -6,4 +6,6 @@ from menu.exerciseFive import designFiveList,designFiveDict
 from menu.exerciseSix import designSixList,designSixDict
 from menu.exerciseTen import designTenList,designTenDict
 from menu.exerciseSeven import designSevenList
-designSevenList()
+from menu.exerciseEight import designEightList
+
+designEightList()
