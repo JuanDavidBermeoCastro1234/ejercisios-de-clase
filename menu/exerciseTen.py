@@ -8,3 +8,4 @@ def designTenList():
 
     print(f"el numero menor es: {result[-1]}")
     print(f"el numero mayor es: {result[0]}")
+    

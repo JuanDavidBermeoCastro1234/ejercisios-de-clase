@@ -19,4 +19,12 @@ def save_course(course):
     return data
 
 
+#diccionario 
+def search_currency(currency):
+    data = read_file("exerciseOnedict.json")
+    if (data.get(currency)):
+        return data.get(currency)
+    else:
+        return "Currency not found"
+
 

@@ -12,3 +12,12 @@ def save_subjects(course):
         write_file(subjects, "exercisesTwolist.json")
         return subjects
 
+#dict
+def write_info(name, age, adress, phone):
+    data = read_file("exerciseTwoDict.json")
+    data.append(name)
+    data.append(age)
+    data.append(adress)
+    data.append(phone)
+    write_file(data, "exerciseTwoDict.json")
+    return data
