@@ -22,3 +22,15 @@ def save_numbers():
     data = read_file("exerciseFivelist.json")
     write_file(data, "exerciseFivelist.json")
     return data
+
+
+#five diccionario
+
+def show_credits():
+    data = read_file("exerciseFiveDict.json")
+    total_credits = 0 
+    for subject, credits in data.items():
+        print(f"{subject} has {credits} credits")
+        total_credits += credits
+        
+    print(f"The total of credits is {total_credits}")

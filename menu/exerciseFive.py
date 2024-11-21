@@ -1,4 +1,4 @@
-from logic.exerciseFive import save_numbers
+from logic.exerciseFive import save_numbers, show_credits
 
 def designFiveList():
 
@@ -6,3 +6,8 @@ def designFiveList():
     
     result.sort()
     print(result)
+
+
+#five diccionario
+def designFiveDict():
+    show_credits()
