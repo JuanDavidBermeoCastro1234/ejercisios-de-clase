@@ -24,3 +24,35 @@ def save_word(word):
 
 def palindrome(word):
      return word == word [::-1]
+
+#dict
+
+def read_translation_dict(path):
+    with open(f"databases/{path}", "r") as file:
+        data = file.read()
+        return json.loads(data)
+
+def write_translation_dict(diccionario, path):
+    with open(f"databases/{path}", "wb+") as file:
+        convertJson = json.dumps(diccionario, indent=4)
+        file.write(convertJson.encode("utf-8"))
+        file.close()
+
+def create_translation_dict():
+    diccionario = read_translation_dict("exerciseEightDict.json")
+    palabras = input("Introduce la lista de palabras y traducciones en formato palabra:traducción separadas por comas: ")
+    for i in palabras.split(','):
+        clave, valor = i.split(':')
+        diccionario[clave.strip()] = valor.strip()
+    write_translation_dict(diccionario, "exerciseEightDict.json")
+    return diccionario
+
+def translate_sentence(diccionario):
+    frase = input('Introduce una frase en español: ')
+    traduccion = []
+    for palabra in frase.split():
+        if palabra in diccionario:
+            traduccion.append(diccionario[palabra])
+        else:
+            traduccion.append(palabra)
+    return ' '.join(traduccion)
