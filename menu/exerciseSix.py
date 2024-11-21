@@ -1,5 +1,5 @@
 from tabulate import tabulate
-from logic.exerciseSix  import fail_course, read_file
+from logic.exerciseSix  import fail_course, read_file,  save_file,user_data, display_data
 
 def designSixList():
     
@@ -26,4 +26,15 @@ def designSixList():
     else:
         print("no failed Subjects.")
 
-    
+#dict
+def designSixDict():
+    person_data = read_file("exerciseSixDict.json")
+    while True:
+        key = input("Enter the type of data (name, age, gender, etc.) or 'exit' to finish: ").lower()
+        if key == "exit":
+            print("Leaving and saving data")
+            save_file(person_data)
+            break
+        value = input(f"Enter the value for {key}: ").strip()
+        person_data = user_data(person_data, key, value)
+        display_data(person_data)
