@@ -1,29 +1,21 @@
-import json  
+#Escribir un programa que almacene el abecedario en una lista, elimine de la lista 
+#las letras que ocupen posiciones múltiplos de 3, 
+#y muestre por pantalla la lista resultante.
 
 import json
-def read_file():
-    with open ("databases/exerciseSevendict.json", "r") as file :
-        datos=file.read()
-        convertirdict=json.loads(datos)
-        return convertirdict
 
-def write_file (data):
-    with open ("databases/exerciseSevendict.json", "w+") as file :
-        convertirjson= json.dump(data, indent=4).encode ("utf-8")
-        file.write(convertirjson)
+def read_file(path):
+    with open(f"databases/{path}", "r") as file:
+        data = file.read()
+        convertirList = json.loads(data) 
+        return convertirList
+    
+def write_file(data, path):
+    with open(f"databases/{path}", "wb+") as file:
+        convertirJson = json.dumps(data, indent=4).encode("utf-8")
+        file.write(convertirJson)
         file.close()
-
-
-def saveCourse (articule):
-    data=read_file()
-    data.append(articule)
-    write_file(data)
-    return data 
-
-
-
-
-
-
-
-
+        
+def reset(path): # restore the file with the initial structure 
+    with open(f"databases/{path}", "w") as file:
+        json.dump({"alphabet": []}, file, indent = 4 )
